@@ -98,6 +98,6 @@ railsでコミュニケーションツール
 * windows 7
 * sublime text3
 * ConEmu, nyaos
-* Git, GitHub, SourceTree
+* Git, GitHub, SourceTree, Git Flow
 * Google Chrome
 
