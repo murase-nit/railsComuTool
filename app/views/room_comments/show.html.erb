@@ -1,0 +1,18 @@
+<div>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>コメント</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @comments.each do |comment| %>
+				<tr>
+					<td><%= comment.comment %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<%= link_to '部屋一覧へ', rooms_path, method: :get %>
