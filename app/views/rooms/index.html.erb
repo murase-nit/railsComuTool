@@ -1,3 +1,17 @@
 <div>
-indexページ
+	<table border="1">
+		<caption>部屋名一覧</caption>
+		<thead>
+			<tr>
+				<th>部屋名</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @rooms.each do |room| %>
+				<tr>
+					<td><%= link_to room.name, room_comment_path(room.id), method: :get %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
