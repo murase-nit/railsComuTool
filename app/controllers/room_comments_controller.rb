@@ -5,4 +5,10 @@ class RoomCommentsController < ApplicationController
 		p @room.room_comments
 	end
 
+	# 指定された部屋のコメントを表示する
+	# def show
+	# 	@comments = RoomComments
+		
+	# end
+
 end
