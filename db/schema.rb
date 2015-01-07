@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150107105026) do
+ActiveRecord::Schema.define(version: 20150107111516) do
+
+  create_table "room_comments", force: true do |t|
+    t.integer  "room_id"
+    t.integer  "offset"
+    t.string   "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rooms", force: true do |t|
     t.string   "name"
