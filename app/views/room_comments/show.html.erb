@@ -16,8 +16,8 @@
 </div>
 
 <!-- <%= debug(@comments)%>
-<%= debug(@comments[0][:room_id])%>
  -->
+ <!-- <%= debug(params[:id]) %> -->
 
 <h1>コメントの投稿</h1>
 
@@ -26,7 +26,7 @@
     <%= f.label :comment, 'コメント'%><br>
     <%= f.text_area :comment %>
   </div>
-  		<%= f.hidden_field :room_id, value: @comments[0][:room_id]%>
+  		<%= f.hidden_field :room_id, value: params[:id]%>
   <div class="actions">
     <%= f.submit '投稿'%>
   </div>
