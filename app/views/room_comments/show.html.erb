@@ -15,4 +15,22 @@
 	</table>
 </div>
 
+<!-- <%= debug(@comments)%>
+<%= debug(@comments[0][:room_id])%>
+ -->
+
+<h1>コメントの投稿</h1>
+
+<%= form_for(RoomComment.new) do |f| %>
+  <div class="field">
+    <%= f.label :comment, 'コメント'%><br>
+    <%= f.text_area :comment %>
+  </div>
+  		<%= f.hidden_field :room_id, value: @comments[0][:room_id]%>
+  <div class="actions">
+    <%= f.submit '投稿'%>
+  </div>
+<% end %>
+
+
 <%= link_to '部屋一覧へ', rooms_path, method: :get %>
