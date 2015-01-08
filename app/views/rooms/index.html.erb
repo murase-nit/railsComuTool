@@ -15,3 +15,17 @@
 		</tbody>
 	</table>
 </div>
+
+
+<h1>投稿フォーム</h1>
+
+<%= form_for(Room.new) do |f| %>
+  <div class="field">
+    <%= f.label :name, '部屋名'%><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit '部屋作成'%>
+  </div>
+<% end %>
+
