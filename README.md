@@ -3,13 +3,19 @@
 
 railsでコミュニケーションツール
 
+# バージョン履歴
+## ver1.0.0
+
 # 作成予定プログラム
 ## ver1.0.0
 必要最小限のプログラム
-* 部屋名一覧の表示
-* 部屋作成フォーム
-* 部屋名をクリックしてその中での会話を表示する
-* 発言フォーム
+
+* Roomsコントローラ、モデル、ビュー
+	* 部屋名一覧の表示
+	* 部屋作成フォーム
+* RoomCommentsコントローラ、モデル、ビュー
+	* 部屋名をクリックしてその中での会話を表示する
+	* 発言フォーム
 
 ### データベースの設計
 * 部屋テーブル(rooms)
@@ -19,7 +25,7 @@ railsでコミュニケーションツール
 |id|int|部屋ID|
 |name|string|部屋名|
 
-* 部屋内のコメントなどのテーブル(roomComments)
+* 部屋内のコメントなどのテーブル(room_comments)
 
 |col_name|type|description|
 |:----|:--|:---|
@@ -98,6 +104,6 @@ railsでコミュニケーションツール
 * windows 7
 * sublime text3
 * ConEmu, nyaos
-* Git, GitHub, SourceTree
+* Git, GitHub, SourceTree, Git Flow
 * Google Chrome
 

@@ -1,0 +1,36 @@
+<div>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>コメント</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @comments.each do |comment| %>
+				<tr>
+					<td><%= comment.comment %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<!-- <%= debug(@comments)%>
+ -->
+ <!-- <%= debug(params[:id]) %> -->
+
+<h1>コメントの投稿</h1>
+
+<%= form_for(RoomComment.new) do |f| %>
+  <div class="field">
+    <%= f.label :comment, 'コメント'%><br>
+    <%= f.text_area :comment %>
+  </div>
+  		<%= f.hidden_field :room_id, value: params[:id]%>
+  <div class="actions">
+    <%= f.submit '投稿'%>
+  </div>
+<% end %>
+
+
+<%= link_to '部屋一覧へ', rooms_path, method: :get %>
