@@ -1,12 +1,7 @@
 # railsComuTool
-~~railsで作成する掲示板プログラム~~
-
 railsでコミュニケーションツール
 
 # バージョン履歴
-## ver1.0.0
-
-# 作成予定プログラム
 ## ver1.0.0
 必要最小限のプログラム
 
@@ -31,9 +26,43 @@ railsでコミュニケーションツール
 |:----|:--|:---|
 |id|int|コメントID|
 |rooms_id|int|部屋テーブルのID(FK)|
-|offset|int|投稿されたコメントの順番|
 |comment|string|投稿されたコメント|
 
+# 作成予定プログラム
+## ver1.1.0
+* レイアウトの変更(共通する部品の共有(ヘッダ、フッタ、メニュー))
+* ログイン機能
+* ユーザの表示
+* 日付
+* 削除機能(部屋、コメント、アカウント)
+
+### データベースの設計
+* 部屋テーブル(rooms)
+
+|col_name|type|description|
+|:----|:-----|:------|
+|id|int|部屋ID|
+|name|string|部屋名|
+|last_comment_date|date|最終コメント投稿時間|
+
+* 部屋内のコメントなどのテーブル(room_comments)
+
+|col_name|type|description|
+|:----|:--|:---|
+|id|int|コメントID|
+|rooms_id|int|部屋テーブルのID(FK)|
+|comment|string|投稿されたコメント|
+|user_account_id|string|ユーザアカウント管理テーブルのID(FK)|
+
+* ユーザアカウント管理テーブル(user_account)
+
+|col_name|type|description|
+|:----|:--|:---|
+|id|int|ユーザアカウント管理ID|
+|name|string|ユーザ名|
+|pass|string|パスワード(暗号化)|
+
+|その他ユーザ情報|||
 
 # メモ欄
 ## ほしい機能
