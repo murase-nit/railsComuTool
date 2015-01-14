@@ -25,6 +25,8 @@ class LoginController < ApplicationController
 	# 新規ユーザ登録処理
 	# POST /createAccount
 	def createAccount
+		puts "createAccountアクション"
+		p params
 	end
 
 
