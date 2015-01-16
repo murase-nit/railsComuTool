@@ -54,7 +54,7 @@ railsでコミュニケーションツール
 |comment|string|投稿されたコメント|
 |user_account_id|string|ユーザアカウント管理テーブルのID(FK)|
 
-* ユーザアカウント管理テーブル(user_account)
+* ユーザアカウント管理テーブル(users)
 
 |col_name|type|description|
 |:----|:--|:---|

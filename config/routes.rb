@@ -55,4 +55,9 @@ resources :rooms, :room_comments
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+# あまりよくない
+# コントローラー・アクション・idを指定
+match ':controller(/:action(/:id))', via: [ :get, :post, :patch ]
+
 end

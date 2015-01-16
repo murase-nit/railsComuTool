@@ -1,0 +1,21 @@
+
+<%= form_tag action: :auth do %>
+
+	<%= label_tag :username, 'ユーザ名' %>
+	<br>
+	<%= text_field_tag :username, '', size: 20 %>
+	<br>
+	<%= label_tag :passwd, 'パスワード' %>
+	<br>
+	<%= password_field_tag :passwd, '', size: 20 %>
+	<br>
+	<!-- ログイン後のリダイレクトすべきアクションを書くフィールドにセット -->
+	<%= hidden_field_tag :referer, flash[:referer] %>
+	<br>
+	<%= submit_tag 'ログイン' %>
+
+<p><h1>パスワードは暗号化されていません</h1></p>
+
+<% end %>
+
+

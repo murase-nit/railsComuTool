@@ -1,0 +1,42 @@
+
+<p>新規ユーザ登録</p>
+
+
+<%= form_for @user, url:{action: :createAccount} do |f| %>
+	<!-- 登録内容の不備を表示 -->
+	<% if @user.errors.any? %>
+		<div id="create_account_error">
+			<h2>入力データに不備があります</h2>
+			<ul>
+				<% @user.errors.values.each do |msgArr| %>
+					<% msgArr.each do |msg| %>
+					<li><%= msg %></li>
+					<% end %>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<!-- 登録フォーム -->
+	<%= f.label :name, 'ユーザ名' %>
+	<br>
+	<%= f.text_field :name, size: 20 %>
+	<br>
+	<%= f.label :pass, 'パスワード' %>
+	<br>
+	<%= f.password_field :pass, size: 20 %>
+	<br>
+	<%= f.label :pass_confirmation, 'もう一度パスワードを入力してください' %>
+	<br>
+	<%= f.password_field :pass_confirmation, size: 20 %>
+
+	<!-- ログイン後のリダイレクトすべきアクションを書くフィールドにセット -->
+	<%= hidden_field_tag :referer, flash[:referer] %>
+	<br>
+	<%= f.submit '新規登録' %>
+
+<p><h1>パスワードは暗号化されていません</h1></p>
+
+<% end %>
+
+
