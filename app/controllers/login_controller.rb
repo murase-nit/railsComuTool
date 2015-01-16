@@ -18,8 +18,8 @@ class LoginController < ApplicationController
 	# GET /newAccount
 	def newAccount
 		puts "newAccountアクション"
-		@account = User.new
-		p @account
+		@user = User.new
+		p @user
 	end
 
 	# 新規ユーザ登録処理
@@ -27,9 +27,21 @@ class LoginController < ApplicationController
 	def createAccount
 		puts "createAccountアクション"
 		p params
+		@user = User.new(user_params)
+		puts "ユーザ登録これからする"
+		if @user.save
+			redirect_to controller: :rooms, action: :index
+		else
+			render action: :newAccount
+		end
 	end
 
-
-
+private
+	# データの受け取り
+	def user_params
+		puts "データの受け取り"
+		p params.require(:user).permit(:name, :pass, :pass_confirmation)
+		params.require(:user).permit(:name, :pass, :pass_confirmation)
+	end
 
 end
