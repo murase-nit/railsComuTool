@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   root 'rooms#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+  # get ':login/:index' => 'login#index'
+  # post ':login/:logout', 'login#logout'
+  # post 'login/:auth', 'login#auth'
+  # get 'login/:newAccount', 'login#newAccount'
+  # post 'login/:createAccount', 'login#createAccount'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -59,5 +64,6 @@ resources :rooms, :room_comments
 # あまりよくない
 # コントローラー・アクション・idを指定
 match ':controller(/:action(/:id))', via: [ :get, :post, :patch ]
+
 
 end

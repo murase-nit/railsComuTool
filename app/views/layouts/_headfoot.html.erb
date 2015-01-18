@@ -2,6 +2,15 @@
 
 <div id="header">
 header
+<br>
+<% if session[:user_id]%>
+ようこそ<%= @authedUser.name %>さん
+<%= link_to 'ログアウト', {controller: :login, action: :logout}, method: :post %>
+<% else %>
+ゲストユーザ
+<%= link_to 'ログイン', {controller: :login, action: :index} %>
+<%= link_to '新規アカウント', {controller: :login, action: :newAccount} %>
+<% end %>
 </div>
 
 <hr>
