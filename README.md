@@ -51,8 +51,8 @@ railsでコミュニケーションツール
 |:----|:--|:---|
 |id|int|コメントID|
 |rooms_id|int|部屋テーブルのID(FK)|
+|user_id|string|ユーザアカウント管理テーブルのID(FK)|
 |comment|string|投稿されたコメント|
-|user_account_id|string|ユーザアカウント管理テーブルのID(FK)|
 
 * ユーザアカウント管理テーブル(users)
 

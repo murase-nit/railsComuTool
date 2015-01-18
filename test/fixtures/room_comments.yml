@@ -1,21 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   room_id: 1
+  user_id: 2
   comment: comment0
 
 two:
   room_id: 1
+  user_id: 3
   comment: comment1
 
 three:
   room_id: 1
+  user_id: 2
   comment: comment2
 
 four:
   room_id: 2
+  user_id: 1
   comment: room_id2 comment0
 
 three:
   room_id: 2
+  user_id: 2
   comment: room_id2 comment1

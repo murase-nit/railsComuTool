@@ -1,14 +1,20 @@
+<h1><%= @room.name %></h1>
+<!-- コメントの一覧 -->
 <div>
 	<table border="1">
 		<thead>
 			<tr>
 				<th>コメント</th>
+				<th>ユーザ名</th>
+				<th>投稿日時</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @comments.each do |comment| %>
 				<tr>
 					<td><%= comment.comment %></td>
+					<td><%= comment.user.name %></td>
+					<td><%= comment.created_at %></td>
 				</tr>
 			<% end %>
 		</tbody>
@@ -26,7 +32,10 @@
     <%= f.label :comment, 'コメント'%><br>
     <%= f.text_area :comment %>
   </div>
+  		<!--どの部屋で投稿したコメントか-->
   		<%= f.hidden_field :room_id, value: params[:id]%>
+  		<!--ユーザ名-->
+  		<%= f.hidden_field :user_id, value: session[:user_id] %>
   <div class="actions">
     <%= f.submit '投稿'%>
   </div>

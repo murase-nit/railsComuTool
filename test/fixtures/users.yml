@@ -1,9 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+zero:
+  id: 0
+  name: ゲスト
+  pass: fefiapoeuhfpoauiehjgp
 one:
-  name: MyString
-  pass: MyString
+  id: 1
+  name: user1
+  pass: user1
 
 two:
-  name: MyString
-  pass: MyString
+  id: 2
+  name: user2
+  pass: user2
+
+three:
+  id: 3
+  name: user4
+  pass: user4
+
+four:
+  id: 4
+  name: user3
+  pass: user3

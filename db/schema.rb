@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150114125536) do
 
   create_table "room_comments", force: true do |t|
     t.integer  "room_id"
-    t.integer  "offset"
     t.string   "comment"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

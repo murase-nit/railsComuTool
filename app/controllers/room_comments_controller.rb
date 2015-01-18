@@ -7,7 +7,9 @@ class RoomCommentsController < ApplicationController
 
 	#指定された部屋のコメントを表示する
 	def show
+		puts "roomcommnetsコントローラshowアクション"
 		@comments = RoomComment.where(room_id: params[:id]).order(id: :desc)
+		@room = Room.find(params[:id])
 	end
 
 	# コメントの投稿
@@ -16,6 +18,8 @@ class RoomCommentsController < ApplicationController
 		@comment = RoomComment.new(roomComments_params)
 		puts "コメント投稿"
 		p @comment
+		# ユーザ登録されていなかったときゲストとする
+		@comment.user_id = 0 if @comment.user_id.nil?
 		@comment.save
 		redirect_to room_comment_path(@comment[:room_id])
 	end
@@ -26,7 +30,7 @@ class RoomCommentsController < ApplicationController
 	def roomComments_params
 		puts "プライベートメソッドroomComments_params"
 		p params
-		params.require(:room_comment).permit(:comment, :room_id)
+		params.require(:room_comment).permit(:comment, :room_id, :user_id)
 	end
 
 end
