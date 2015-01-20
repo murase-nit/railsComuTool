@@ -1,3 +1,34 @@
+
+<h1>コメントの投稿</h1>
+
+<%= form_for(RoomComment.new) do |f| %>
+  <div class="field">
+    <%= f.label :comment, 'コメント'%><br>
+    <%= f.text_area :comment %>
+  </div>
+  		<!--どの部屋で投稿したコメントか-->
+  		<%= f.hidden_field :room_id, value: params[:id]%>
+  		<!--ユーザ名-->
+  		<%= f.hidden_field :user_id, value: session[:user_id] %>
+  <div class="actions">
+    <%= f.submit '投稿'%>
+  </div>
+<% end %>
+
+<!-- 登録内容の不備を表示 -->
+<% if flash[:err_comment]!=nil %>
+	<div id="input-cmoment_error">
+		<h2>入力データに不備があります</h2>
+		<ul>
+			<% flash[:err_comment].each do |msgArr| %>
+				<% msgArr.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
 <h1><%= @room.name %></h1>
 <!-- コメントの一覧 -->
 <div>
@@ -24,22 +55,5 @@
 <!-- <%= debug(@comments)%>
  -->
  <!-- <%= debug(params[:id]) %> -->
-
-<h1>コメントの投稿</h1>
-
-<%= form_for(RoomComment.new) do |f| %>
-  <div class="field">
-    <%= f.label :comment, 'コメント'%><br>
-    <%= f.text_area :comment %>
-  </div>
-  		<!--どの部屋で投稿したコメントか-->
-  		<%= f.hidden_field :room_id, value: params[:id]%>
-  		<!--ユーザ名-->
-  		<%= f.hidden_field :user_id, value: session[:user_id] %>
-  <div class="actions">
-    <%= f.submit '投稿'%>
-  </div>
-<% end %>
-
 
 <%= link_to '部屋一覧へ', rooms_path, method: :get %>

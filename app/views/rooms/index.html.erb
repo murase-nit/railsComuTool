@@ -1,3 +1,32 @@
+
+
+<h1>投稿フォーム</h1>
+
+<%= form_for(Room.new) do |f| %>
+  <div class="field">
+    <%= f.label :name, '部屋名'%><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit '部屋作成'%>
+  </div>
+<% end %>
+
+<!-- 登録内容の不備を表示 -->
+<% if flash[:err_create_room]!=nil %>
+	<div id="input_error">
+		<h2>入力データに不備があります</h2>
+		<ul>
+			<% flash[:err_create_room].each do |msgArr| %>
+				<% msgArr.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+
 <div>
 	<table border="1">
 		<caption>部屋名一覧</caption>
@@ -17,15 +46,4 @@
 </div>
 
 
-<h1>投稿フォーム</h1>
-
-<%= form_for(Room.new) do |f| %>
-  <div class="field">
-    <%= f.label :name, '部屋名'%><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="actions">
-    <%= f.submit '部屋作成'%>
-  </div>
-<% end %>
 

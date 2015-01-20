@@ -12,8 +12,12 @@ class RoomsController < ApplicationController
 		@room = Room.new(rooms_params)
 #		puts "roomの中身"
 #		p @room
-		@room.save
-		redirect_to rooms_path
+		if @room.save
+			redirect_to rooms_path
+		else
+			flash[:err_create_room] = @room.errors.values
+			redirect_to rooms_path
+		end
 	end
 
 	private
