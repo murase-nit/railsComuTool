@@ -1,6 +1,10 @@
 # railsComuTool
 railsでコミュニケーションツール
 
+<http://whispering-sea-7744.herokuapp.com/>
+
+![sample](sample2.png)
+
 # バージョン履歴
 ## ver1.0.0
 必要最小限のプログラム
